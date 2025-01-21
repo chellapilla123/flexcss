@@ -1,0 +1,208 @@
+<!-- day12 CSS10(28-12-24)  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<title>document</title>
+<style>
+    body{
+        color:aliceblue;
+        background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 11%, rgba(148,187,233,1) 100%);
+font-family: monospace;
+font-size: medium;
+    }
+    fieldset{
+        width:500px;
+        align-self: middle;
+        border:3px solid rgb(128, 128, 186);
+        border-radius: 5px;
+      
+        
+    }
+    input:required{
+        border:3px solid rgb(124, 124, 222)
+         
+    }
+    input:optional{
+        border: 2px solid green;
+    }
+    input[readonly]{
+        background-color:rgb(49, 192, 240);
+        border: dotted;
+        color:red;
+        font-weight: 900;
+        color:rgb(40, 206, 103)
+        
+        
+    }
+    select{
+        background-color: rgb(237, 148, 237);
+        border-radius: 50px;
+        font-size: 20px;
+        width: 200px;
+        color: rgb(212, 124, 16);
+    }
+    input[type="radio"]:checked{
+      height: 20px;
+      width: 20px;
+    }
+    input[type="radio"]:checked+label{
+      color: brown;
+      font-size: 20px;
+    }
+    p{
+      display: none;
+    }
+    input:hover+p{
+      display: inline;
+      font-weight:300;
+      background-color:rgb(211, 213, 198);
+      border:2px solid blue ;
+      color:green;
+    }
+    input:focus{
+      background-color: rgb(144, 144, 200);
+      color:rgb(14, 12, 12);
+    }
+    img{
+      display: none;
+    }
+    input[type="email"]:focus:valid~img.valid{
+      display: inline;
+      width: 15px;
+      height: 15px;
+    }
+    input[type="email"]:focus:invalid~img.invalid{
+      display: inline;
+      width: 15px;
+      height: 15px;
+    }
+    input[name="age"]:focus:out-of-range:invalid~img.invalid{
+      display:inline;
+      width: 20px;
+      height: 20px;
+    }
+    input[name="age"]:focus:in-range:valid~img.valid{
+      display:inline;
+      width: 20px;
+      height: 20px;
+    }
+    
+    
+</style>
+<center><h1>REGISTATION FORM</h1></center>
+<marquee behavior="scroll" direction="left"><h1>Information is about tap academy course details personal info and course details</h1></marquee>
+  
+  <form action="">
+    
+    <fieldset>
+      <legend>Personal info</legend>
+      <table>
+      <tr>
+        <td><label for="">NAME </label></td>
+        <td><input type="text" name="FN" placeholder="ex:xyz" size="15" maxlength="15" required><p>enter your name</p></td>
+
+      </tr>
+      <tr>
+        <td><label for="">SURNAME</label></td>
+        <td><input type="text" placeholder="ex:c" optional><p>enter your second name</p>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="">MOBILE NO.</label></td>
+
+        <td><input type="tel" placeholder="ex:1234567890" required><p>enter your mobile number</p></input></td>
+
+      </tr>
+      <tr>
+        <td><label for="">EMAIL</label></td>
+        <td><input type="email" placeholder="ex:email@123" required>
+          <img src="correct.png" width="20px" height="20px" class="valid">
+          <img src="wrong.jpeg" width="20px" height="20px" class="invalid"><p>enter email id</p></td>
+      </tr>
+      <tr>
+        <td><label for="">PASSWORD</label></td>
+        <td><input type="password" required><p>enter password<br>atleast one upper one lower case and special symbol</p></td>
+        </tr>
+        <tr>
+          <td><label for="">CONfIRM PASSWORD</label></td>
+          <td><input type="password"></td>
+        </tr>
+        <tr>
+          <td><label for="">DOB</label></td>
+          <td><input type="date"></td>
+        </tr>
+        <tr>
+          <td><label for="">AGE</label></td>
+          <td><input type="number" name="age" required max="100" min="18"><img src="correct.png" width="20px" height="20px" class="valid">
+            <img src="wrong.jpeg" width="20px" height="20px" class="invalid"></td>
+        </tr>
+        <tr>
+          <td><label for="">GENDER</label></td>
+          <td><input type="radio" name="gender" value="m"><label>Male</label> 
+            <input type="radio" name="gender" value="f"><label>Female</label> 
+            <input type="radio" name="gender"value="o"><label for="">Others</label></td>
+        </tr>
+        <tr>
+          <td><label for="">COUNTRY</label></td>
+          <td> <select>
+            <option value="">India</option>
+            <option value="">Others</option>
+            </select>
+
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">UPLOAD FILE</label></td>
+          <td><input type="file"></td>
+        </tr> 
+        <tr>
+          <td><input type="reset" required></td>
+        </tr>
+        
+      
+      </table>
+    </fieldset>
+        
+          <fieldset>
+            <table>
+          <legend>Info</legend>
+          <tr>
+            <td>DATE</td>
+            <td><input type="date"></td>
+          </tr>
+          <tr>
+          <td><label for="">SELECT COURSE</label></td>
+          <td><select>
+            <option value="">Python</option>
+            <option value="">Java</option>
+            <option value="">HTML</option>
+            <option value="">JS</option>
+             <p>Please enter which cours u want</p>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label for="">COLLEGE NAME</label></td>
+          <td><input type="text" placeholder="Priyadarshini" readonly></td>
+        </tr>
+        <tr>
+          <td><label for="">DELIVERY MODE</label></td>
+          <td><input type="checkbox" name="mode" value="on">online
+             <input type="checkbox" name="mode">Offline 
+             <input type="checkbox" name="mode">HybrId</td>
+             <input type="text" required><p>Please enter mode</p>
+
+        </tr>
+        <tr>
+          <td>COMMENTS</td>
+          <td><textarea name="" id="" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="submit" required></td>
+          </tr>
+            </table>
+  </fieldset>
+  </form>
+<button width="15%" height="15%">CLICK<a href="file:///C:/Users/ashwi/Documents/Frontend/form.html" download></a></button>
+</html>
